@@ -1,29 +1,29 @@
- 
-//Pedimos por entrada de teclado el dato
 
-let entrada = prompt ("Ingrese un numero menor que 10");
 
-//Parseamos el dato para asegurarnos  que se trata de un dato numérico
-let salida = Number(entrada);
-//creo una constante para reservar el valor de un dato y denegar el acceso si se trata de ese.
-const reservado = "gutierrez"
+const tasa = 1.20;
+function solicitarPresupuesto(){
 
-if (salida < 10) {
-    //este console log lo uso para ver que entra bien en el condicional, no es para el usuario.
-    console.log ('El numero es inferior a 10')
-    let nombre = prompt ("Ingresa tu nombre de usuario:")
-    let apellido = prompt ("Ingresa tu apellido:")
-
-    if (((nombre != "") && (apellido != "")) && (apellido != reservado) ) {
-        alert ("Saludos "+ nombre + " " + apellido)
-   
+    let precio = prompt("Ingresa el presupuesto estimado:");
+    
+                console.log("Presupuesto estimado del cliente es: " + precio);
+                return precio;
     }
-    else  {
-        alert ("No puedes acceder con el usurario reservado.")
-    }
-    }
+    
+    let resultado = solicitarPresupuesto();
 
-else {
-    alert('Acceso denegado.')
-}
-//mostramos en un alert box el resultado con un string adicional.
+    console.log(resultado);
+
+  let residencia = prompt("resides en barcelona?");
+    if (residencia == "si") {
+        aplicarTasa(resultado);
+    }
+    else {
+        console.log("que suerte");
+    }
+    function aplicarTasa(valor){
+
+        valor = valor * tasa;
+        alert ("Que suerte que vives en Barcelona, este producto te va a costar:" + " " + valor);
+
+    }
+    
